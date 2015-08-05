@@ -5282,7 +5282,7 @@
 	</message>
 	<message name="catalogProductInfoRequest">
 		<part name="sessionId" type="xsd:string" />
-		<part name="product" type="xsd:string" />
+		<part name="productId" type="xsd:string" />
 		<part name="storeView" type="xsd:string" />
 		<part name="attributes" type="typens:catalogProductRequestAttributes" />
 		<part name="productIdentifierType" type="xsd:string" />
