@@ -167,14 +167,23 @@
 			</complexType>
 			<complexType name="customerCustomerEntityToCreate">
 				<all>
-					<element name="customer_id" type="xsd:int" minOccurs="0" />
-					<element name="email" type="xsd:string" minOccurs="0" />
-					<element name="firstname" type="xsd:string" minOccurs="0" />
-					<element name="lastname" type="xsd:string" minOccurs="0" />
-					<element name="password" type="xsd:string" minOccurs="0" />
-					<element name="website_id" type="xsd:int" minOccurs="0" />
-					<element name="store_id" type="xsd:int" minOccurs="0" />
-					<element name="group_id" type="xsd:int" minOccurs="0" />
+					<element name="customer_id" type="xsd:int" minOccurs="0"/>
+					<element name="email" type="xsd:string" minOccurs="0"/>
+					<element name="firstname" type="xsd:string" minOccurs="0"/>
+					<element name="lastname" type="xsd:string" minOccurs="0"/>
+					<element name="middlename" type="xsd:string" minOccurs="0"/>
+					<element name="password" type="xsd:string" minOccurs="0"/>
+					<element name="website_id" type="xsd:int" minOccurs="0"/>
+					<element name="store_id" type="xsd:int" minOccurs="0"/>
+					<element name="group_id" type="xsd:int" minOccurs="0"/>
+					<element name="prefix" type="xsd:string" minOccurs="0"/>
+					<element name="suffix" type="xsd:string" minOccurs="0"/>
+					<element name="dob" type="xsd:string" minOccurs="0"/>
+					<element name="taxvat" type="xsd:string" minOccurs="0"/>
+					<element name="gender" type="xsd:int" minOccurs="0"/>
+					<element name="external_id" type="xsd:string" minOccurs="0"/>
+					<element name="external_code" type="xsd:string" minOccurs="0"/>
+					<element name="lang" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerCustomerEntity">
@@ -197,6 +206,8 @@
 					<element name="taxvat" type="xsd:string" minOccurs="0" />
 					<element name="confirmation" type="xsd:boolean" minOccurs="0" />
 					<element name="password_hash" type="xsd:string" minOccurs="0" />
+					<element name="lang" type="xsd:string" minOccurs="0"/>
+					<element name="gender" type="xsd:int" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerCustomerEntityArray">
@@ -1139,6 +1150,10 @@
 						minOccurs="0" />
 					<element name="status_history" type="typens:salesOrderStatusHistoryEntityArray"
 						minOccurs="0" />
+						<element name="cod_fee" type="xsd:string" minOccurs="0"/>
+<element name="base_cod_fee" type="xsd:string" minOccurs="0"/>
+<element name="cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
+<element name="base_cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="salesOrderListEntity">
@@ -1444,6 +1459,10 @@
 					<element name="lastname" type="xsd:string" minOccurs="0" />
 					<element name="telephone" type="xsd:string" minOccurs="0" />
 					<element name="postcode" type="xsd:string" minOccurs="0" />
+					<element name="cod_fee" type="xsd:string" minOccurs="0"/>
+<element name="base_cod_fee" type="xsd:string" minOccurs="0"/>
+<element name="cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
+<element name="base_cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="salesOrderListEntityArray">
