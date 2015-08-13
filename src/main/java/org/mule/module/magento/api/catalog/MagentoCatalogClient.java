@@ -9,10 +9,12 @@
 package org.mule.module.magento.api.catalog;
 
 import com.magento.api.*;
+
 import org.mule.module.magento.api.catalog.model.MediaMimeType;
 import org.mule.module.magento.api.catalog.model.ProductIdentifier;
 
 import java.io.InputStream;
+import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +32,15 @@ public interface MagentoCatalogClient<ExceptionType extends Exception>
      * @return the listing of category products
      */
     List<CatalogAssignedProduct> listCategoryProducts(int categoryId) throws ExceptionType;
+    
+    /**
+     * Allows you to get full information about a required attribute with the list of options. See catalogProductAttributeInfo SOAP method.   
+     *  
+     *
+     * @param attribute
+     * @return CatalogProductAttributeEntity
+     */
+    public CatalogProductAttributeEntity getCatalogProductAttributeInfo(String attribute) throws ExceptionType;
 
     /**
      * Assign product to category. See catalog-category-assignProduct SOAP method

@@ -817,7 +817,20 @@ public class MagentoCloudConnector {
         return catalogClient.addProductLink(type, ProductIdentifiers.from(productSku, productId, productIdOrSku), linkedProductIdOrSku,
                 productLinkEntity);
     }
-
+    
+    /**
+     * Links two products, given its source and destination productIdOrSku.
+     * <p/>
+     * {@sample.xml ../../../doc/magento-connector.xml.sample magento:addProductLink}
+     *
+     * @param attribute            the product type
+     * @return true if the operation was successful
+     */
+    @Processor
+    public CatalogProductAttributeEntity getCatalogProductAttributeInfo(String attribute) {
+        return catalogClient.getCatalogProductAttributeInfo(attribute);
+    }
+    
     /**
      * Creates a new product media. See catalog-product-attribute-media-create SOAP
      * method.
@@ -967,7 +980,7 @@ public class MagentoCloudConnector {
     public int updateCategoryAttributeStoreView(String storeViewIdOrCode) {
         return catalogClient.updateCatalogCurrentStoreView(storeViewIdOrCode);
     }
-
+    
     /**
      * Retrieve product image types. See catalog-product-attribute-media-types SOAP
      * method.
