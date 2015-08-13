@@ -52,6 +52,18 @@ public class AxisMagentoCatalogClient extends AbstractMagentoClient
     {
         return Arrays.asList(getPort().catalogCategoryAssignedProducts(getSessionId(), categoryId));
     }
+    
+    /**
+     * Allows you to get full information about a required attribute with the list of options. See catalogProductAttributeInfo SOAP method.   
+     *  
+     *
+     * @param attribute
+     * @return CatalogProductAttributeEntity
+     */
+    public CatalogProductAttributeEntity getCatalogProductAttributeInfo(String attribute) throws RemoteException
+    {
+        return getPort().catalogProductAttributeInfo(getSessionId(), attribute);
+    }
 
     /**
      * Assign product to category. See catalog-category-assignProduct SOAP method
