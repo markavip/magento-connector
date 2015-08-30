@@ -1492,6 +1492,7 @@
 					<element name="fax" type="xsd:string" minOccurs="0" />
 					<element name="region_id" type="xsd:string" minOccurs="0" />
 					<element name="address_id" type="xsd:string" minOccurs="0" />
+					<element name="customer_address_id" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="salesOrderItemEntity">
