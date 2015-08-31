@@ -251,6 +251,8 @@
 						minOccurs="0" />
 					<element name="is_default_shipping" type="xsd:boolean"
 						minOccurs="0" />
+					<element name="external_id" type="xsd:string" minOccurs="0"/>
+					<element name="external_code" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerAddressEntityItem">
@@ -278,6 +280,8 @@
 						minOccurs="0" />
 					<element name="is_default_shipping" type="xsd:boolean"
 						minOccurs="0" />
+					<element name="external_id" type="xsd:string" minOccurs="0"/>
+					<element name="external_code" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerAddressEntityArray">
