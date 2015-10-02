@@ -206,6 +206,8 @@
 					<element name="taxvat" type="xsd:string" minOccurs="0" />
 					<element name="confirmation" type="xsd:boolean" minOccurs="0" />
 					<element name="password_hash" type="xsd:string" minOccurs="0" />
+					<element name="external_id" type="xsd:string" minOccurs="0"/>
+					<element name="external_code" type="xsd:string" minOccurs="0"/>
 					<element name="lang" type="xsd:string" minOccurs="0"/>
 					<element name="gender" type="xsd:int" minOccurs="0"/>
 				</all>
