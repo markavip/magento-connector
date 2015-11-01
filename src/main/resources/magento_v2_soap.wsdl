@@ -184,6 +184,7 @@
 					<element name="external_id" type="xsd:string" minOccurs="0"/>
 					<element name="external_code" type="xsd:string" minOccurs="0"/>
 					<element name="lang" type="xsd:string" minOccurs="0"/>
+					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerCustomerEntity">
@@ -210,6 +211,7 @@
 					<element name="external_code" type="xsd:string" minOccurs="0"/>
 					<element name="lang" type="xsd:string" minOccurs="0"/>
 					<element name="gender" type="xsd:int" minOccurs="0"/>
+					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerCustomerEntityArray">
@@ -255,6 +257,7 @@
 						minOccurs="0" />
 					<element name="external_id" type="xsd:string" minOccurs="0"/>
 					<element name="external_code" type="xsd:string" minOccurs="0"/>
+					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerAddressEntityItem">
@@ -284,6 +287,7 @@
 						minOccurs="0" />
 					<element name="external_id" type="xsd:string" minOccurs="0"/>
 					<element name="external_code" type="xsd:string" minOccurs="0"/>
+					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerAddressEntityArray">
@@ -317,6 +321,7 @@
 					<element name="type" type="xsd:string" />
 					<element name="category_ids" type="typens:ArrayOfString" />
 					<element name="website_ids" type="typens:ArrayOfString" />
+					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="catalogProductRequestAttributes">
@@ -378,6 +383,7 @@
 						minOccurs="0" />
 					<element name="enable_googlecheckout" type="xsd:string"
 						minOccurs="0" />
+					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="catalogProductCreateEntity">
@@ -424,6 +430,7 @@
 						type="typens:catalogProductAdditionalAttributesEntity" minOccurs="0" />
 					<element name="stock_data"
 						type="typens:catalogInventoryStockItemUpdateEntity" minOccurs="0" />
+					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="catalogProductAttributeSetEntity">
@@ -1156,6 +1163,7 @@
 						minOccurs="0" />
 					<element name="status_history" type="typens:salesOrderStatusHistoryEntityArray"
 						minOccurs="0" />
+					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 						<element name="cod_fee" type="xsd:string" minOccurs="0"/>
 <element name="base_cod_fee" type="xsd:string" minOccurs="0"/>
 <element name="cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
@@ -1465,6 +1473,7 @@
 					<element name="lastname" type="xsd:string" minOccurs="0" />
 					<element name="telephone" type="xsd:string" minOccurs="0" />
 					<element name="postcode" type="xsd:string" minOccurs="0" />
+					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 					<element name="cod_fee" type="xsd:string" minOccurs="0"/>
 <element name="base_cod_fee" type="xsd:string" minOccurs="0"/>
 <element name="cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
