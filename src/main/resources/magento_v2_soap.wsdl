@@ -1596,6 +1596,8 @@
 						minOccurs="0" />
 					<element name="base_weee_tax_row_disposition" type="xsd:string"
 						minOccurs="0" />
+					<element name="product_price" type="xsd:string" minOccurs="0"/>
+					<element name="product_special_price" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="salesOrderItemEntityArray">
