@@ -208,6 +208,7 @@ public class MagentoCloudConnector {
         keys.add(this.createKey(SalesOrderCreditmemoEntity.class));
         keys.add(this.createKey(SalesOrderCreditmemoItemEntity.class));
         keys.add(this.createKey(SalesOrderEntity.class));
+        keys.add(this.createKey(SalesOrderEntityToReorder.class));
         keys.add(this.createKey(SalesOrderInvoiceCommentEntity.class));
         keys.add(this.createKey(SalesOrderInvoiceEntity.class));
         keys.add(this.createKey(SalesOrderInvoiceItemEntity.class));
@@ -1929,6 +1930,18 @@ public class MagentoCloudConnector {
         return shoppingCartClient.removeShoppingCartCoupon(quoteId, storeId);
     }
 
+    /**
+     * Removes an existing order with increment Id and creates new one with new increment Id and new data. 
+     * {@sample.xml ../../../doc/magento-connector.xml.sample magento:remakeOrder}
+     * 
+     * @param incrementId Increment Id of magento order
+     * @param customerData New data for new order
+     */
+    @Processor
+    public void reorderOrder(String incrementId, @Default("#[payload]") SalesOrderEntityToReorder customerData) {
+    	orderClient.reorderOrder(incrementId, customerData);
+    }
+    
     @SuppressWarnings("unchecked")
     public void setOrderClient(MagentoOrderClient<?> magentoOrderClient) {
         this.orderClient = MagentoClientAdaptor.adapt(MagentoOrderClient.class, magentoOrderClient);

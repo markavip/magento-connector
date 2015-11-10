@@ -9,9 +9,12 @@
 package org.mule.module.magento.api.order;
 
 import com.magento.api.OrderItemIdQty;
+import com.magento.api.SalesOrderEntity;
+import com.magento.api.SalesOrderEntityToReorder;
 import com.magento.api.SalesOrderInvoiceEntity;
 import com.magento.api.SalesOrderListEntity;
 import com.magento.api.SalesOrderShipmentEntity;
+
 import org.mule.module.magento.api.order.model.Carrier;
 
 import java.util.List;
@@ -230,4 +233,11 @@ public interface MagentoOrderClient<ExceptionType extends Exception>
      */
     void cancelOrderInvoice(@NotNull String invoiceId) throws ExceptionType;
 
+    /**
+     * Creates an order based on with incrementId and cancel parent order
+     * 
+     * @param incrementId the increment id of parent order
+     * @param customerData the data of new order
+     */
+    void reorderOrder(@NotNull String incrementId, SalesOrderEntityToReorder customerData) throws ExceptionType;
 }
