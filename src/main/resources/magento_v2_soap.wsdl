@@ -2751,6 +2751,55 @@
 						type="typens:catalogProductDownloadableLinkSampleEntityArray" />
 				</all>
 			</complexType>
+			<complexType name="salesOrderEntityToReorder">
+				<all>
+					<element name="account" type="typens:salesOrderAccountEntity" minOccurs="0"/>
+					<element name="shipping_address" type="typens:salesOrderAddressEntity" minOccurs="0"/>
+					<element name="billing_address" type="typens:salesOrderAddressEntity" minOccurs="0"/>
+					<element name="items" type="typens:salesOrderItemReorderEntityArray" minOccurs="0"/>
+					<element name="payment" type="typens:salesOrderPaymentEntity" minOccurs="0"/>
+					<element name="shipping_method" type="xsd:string" minOccurs="0"/>
+					<element name="coupon" type="typens:salesOrderCouponEntity" minOccurs="0"/>
+				</all>
+			</complexType>
+			<complexType name="salesOrderItemUpdateEntityArray">
+				<complexContent>
+					<restriction base="soapenc:Array">
+						<attribute ref="soapenc:arrayType" wsdl:arrayType="typens:salesOrderItemUpdateEntity[]"/>
+					</restriction>
+				</complexContent>
+			</complexType>
+			<complexType name="salesOrderItemReorderEntityArray">
+				<complexContent>
+					<restriction base="soapenc:Array">
+						<attribute ref="soapenc:arrayType" wsdl:arrayType="typens:salesOrderItemReorderEntity[]"/>
+					</restriction>
+				</complexContent>
+			</complexType>
+			<complexType name="salesOrderItemUpdateEntity">
+				<all>
+					<element name="product_id" type="xsd:string" minOccurs="0"/>
+					<element name="status" type="xsd:string" minOccurs="0"/>
+				</all>
+			</complexType>
+			<complexType name="salesOrderItemReorderEntity">
+				<all>
+					<element name="product_id" type="xsd:string" minOccurs="0"/>
+					<element name="qty" type="xsd:string" minOccurs="0"/>
+				</all>
+			</complexType>
+			<complexType name="salesOrderAccountEntity">
+				<all>
+					<element name="group_id" type="xsd:string" minOccurs="0"/>
+					<element name="email" type="xsd:string" minOccurs="0"/>
+					<element name="dob" type="xsd:string" minOccurs="0"/>
+				</all>
+			</complexType>
+			<complexType name="salesOrderCouponEntity">
+				<all>
+					<element name="code" type="xsd:string" minOccurs="0"/>
+				</all>
+			</complexType>
 		</schema>
 	</types>
 	<message name="endSession">
@@ -3551,6 +3600,11 @@
 			</documentation>
 			<input message="typens:catalogProductDownloadableLinkRemoveRequest" />
 			<output message="typens:catalogProductDownloadableLinkRemoveResponse" />
+		</operation>
+		<operation name="salesOrderReorder">
+			<documentation>Create new order from an order</documentation>
+			<input message="typens:salesOrderReorderRequest"/>
+			<output message="typens:salesOrderReorderResponse"/>
 		</operation>
 	</portType>
 	<binding name="Mage_Api_Model_Server_V2_HandlerBinding" type="typens:Mage_Api_Model_Server_V2_HandlerPortType">
@@ -5184,6 +5238,15 @@
 					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
 			</output>
 		</operation>
+		<operation name="salesOrderReorder">
+			<soap:operation soapAction="urn:Mage_Api_Model_Server_V2_HandlerAction"/>
+			<input>
+				<soap:body namespace="urn:Magento" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:Magento" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
 	</binding>
 	<service name="MagentoService">
 		<port name="Mage_Api_Model_Server_V2_HandlerPort" binding="typens:Mage_Api_Model_Server_V2_HandlerBinding">
@@ -6346,5 +6409,13 @@
 	</message>
 	<message name="catalogProductDownloadableLinkRemoveResponse">
 		<part name="respons" type="xsd:boolean" />
+	</message>
+	<message name="salesOrderReorderRequest">
+		<part name="sessionId" type="xsd:string"/>
+		<part name="incrementId" type="xsd:string"/>
+		<part name="customerData" type="typens:salesOrderEntityToReorder"/>
+	</message>
+	<message name="salesOrderReorderResponse">
+		<part name="incrementId" type="xsd:string"/>
 	</message>
 </definitions>

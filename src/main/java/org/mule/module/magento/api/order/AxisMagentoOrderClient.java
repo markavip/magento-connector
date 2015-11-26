@@ -9,6 +9,7 @@
 package org.mule.module.magento.api.order;
 
 import com.magento.api.*;
+
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.Transformer;
 import org.apache.commons.lang.Validate;
@@ -18,6 +19,7 @@ import org.mule.module.magento.api.order.model.Carrier;
 import org.mule.module.magento.filters.FiltersParser;
 
 import javax.validation.constraints.NotNull;
+
 import java.rmi.RemoteException;
 import java.util.Arrays;
 import java.util.List;
@@ -203,5 +205,13 @@ public class AxisMagentoOrderClient extends AbstractMagentoClient
         }
         return quantities;
     }
+
+	@Override
+	public void reorderOrder(@NotNull String incrementId, SalesOrderEntityToReorder customerData)
+			throws RemoteException {
+		Validate.notNull(incrementId);
+		javax.xml.rpc.holders.StringHolder sh = new javax.xml.rpc.holders.StringHolder(incrementId);
+		getPort().salesOrderReorder(getSessionId(), sh, customerData);
+	}
 
 }

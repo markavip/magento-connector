@@ -498,3 +498,7 @@
 <!-- BEGIN_INCLUDE(magento:removeShoppingCartCoupon) -->
         <magento:remove-shopping-cart-coupon quoteId="1" />
 <!-- END_INCLUDE(magento:removeShoppingCartCoupon) -->
+
+<!-- BEGIN_INCLUDE(magento:remakeOrder) -->
+        <magento:remake-order incrementId="1" />
+<!-- END_INCLUDE(magento:remakeOrder) -->
