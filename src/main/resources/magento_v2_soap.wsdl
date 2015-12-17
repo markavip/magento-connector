@@ -258,6 +258,7 @@
 					<element name="external_id" type="xsd:string" minOccurs="0"/>
 					<element name="external_code" type="xsd:string" minOccurs="0"/>
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
+					<element name="is_deleted" type="xsd:boolean" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerAddressEntityItem">
@@ -288,6 +289,7 @@
 					<element name="external_id" type="xsd:string" minOccurs="0"/>
 					<element name="external_code" type="xsd:string" minOccurs="0"/>
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
+					<element name="is_deleted" type="xsd:boolean" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerAddressEntityArray">
