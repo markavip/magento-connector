@@ -324,6 +324,7 @@
 					<element name="category_ids" type="typens:ArrayOfString" />
 					<element name="website_ids" type="typens:ArrayOfString" />
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
+					<element name="division" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="catalogProductRequestAttributes">
