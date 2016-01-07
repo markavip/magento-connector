@@ -387,6 +387,7 @@
 					<element name="enable_googlecheckout" type="xsd:string"
 						minOccurs="0" />
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
+					<element name="division" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="catalogProductCreateEntity">
@@ -434,6 +435,7 @@
 					<element name="stock_data"
 						type="typens:catalogInventoryStockItemUpdateEntity" minOccurs="0" />
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
+					<element name="division" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="catalogProductAttributeSetEntity">
@@ -1601,6 +1603,7 @@
 						minOccurs="0" />
 					<element name="product_price" type="xsd:string" minOccurs="0"/>
 					<element name="product_special_price" type="xsd:string" minOccurs="0"/>
+					<element name="division" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="salesOrderItemEntityArray">
