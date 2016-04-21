@@ -1480,9 +1480,11 @@
 					<element name="postcode" type="xsd:string" minOccurs="0" />
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 					<element name="cod_fee" type="xsd:string" minOccurs="0"/>
-<element name="base_cod_fee" type="xsd:string" minOccurs="0"/>
-<element name="cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
-<element name="base_cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
+					<element name="base_cod_fee" type="xsd:string" minOccurs="0"/>
+					<element name="cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
+					<element name="base_cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
+					<element name="auto_conf_flag" type="xsd:boolean" minOccurs="0"/>
+					
 				</all>
 			</complexType>
 			<complexType name="salesOrderListEntityArray">
