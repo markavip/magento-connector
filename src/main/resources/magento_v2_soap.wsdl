@@ -185,6 +185,7 @@
 					<element name="external_code" type="xsd:string" minOccurs="0"/>
 					<element name="lang" type="xsd:string" minOccurs="0"/>
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
+					<element name="is_active" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerCustomerEntity">
@@ -212,6 +213,7 @@
 					<element name="lang" type="xsd:string" minOccurs="0"/>
 					<element name="gender" type="xsd:int" minOccurs="0"/>
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
+					<element name="is_active" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerCustomerEntityArray">
