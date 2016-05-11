@@ -2761,6 +2761,14 @@
 						type="typens:catalogProductDownloadableLinkSampleEntityArray" />
 				</all>
 			</complexType>
+			<complexType name="salesOrderEntityToUpdate">
+				<all>
+					<element name="items" type="typens:salesOrderItemUpdateEntityArray" minOccurs="0"/>
+					<element name="status" type="xsd:string" minOccurs="0"/>
+					<element name="comment" type="xsd:string" minOccurs="0"/>
+					<element name="is_customer_notified" type="xsd:string" minOccurs="0"/>
+				</all>
+			</complexType>
 			<complexType name="salesOrderEntityToReorder">
 				<all>
 					<element name="account" type="typens:salesOrderAccountEntity" minOccurs="0"/>
@@ -3610,6 +3618,11 @@
 			</documentation>
 			<input message="typens:catalogProductDownloadableLinkRemoveRequest" />
 			<output message="typens:catalogProductDownloadableLinkRemoveResponse" />
+		</operation>
+		<operation name="salesOrderUpdate">
+			<documentation>Update an order</documentation>
+			<input message="typens:salesOrderUpdateRequest"/>
+			<output message="typens:salesOrderUpdateResponse"/>
 		</operation>
 		<operation name="salesOrderReorder">
 			<documentation>Create new order from an order</documentation>
@@ -5248,6 +5261,15 @@
 					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
 			</output>
 		</operation>
+		<operation name="salesOrderUpdate">
+			<soap:operation soapAction="urn:Mage_Api_Model_Server_V2_HandlerAction"/>
+			<input>
+				<soap:body namespace="urn:Magento" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:Magento" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
 		<operation name="salesOrderReorder">
 			<soap:operation soapAction="urn:Mage_Api_Model_Server_V2_HandlerAction"/>
 			<input>
@@ -6419,6 +6441,14 @@
 	</message>
 	<message name="catalogProductDownloadableLinkRemoveResponse">
 		<part name="respons" type="xsd:boolean" />
+	</message>
+	<message name="salesOrderUpdateRequest">
+		<part name="sessionId" type="xsd:string"/>
+		<part name="incrementId" type="xsd:string"/>
+		<part name="customerData" type="typens:salesOrderEntityToUpdate"/>
+	</message>
+	<message name="salesOrderUpdateResponse">
+		<part name="incrementId" type="xsd:string"/>
 	</message>
 	<message name="salesOrderReorderRequest">
 		<part name="sessionId" type="xsd:string"/>
