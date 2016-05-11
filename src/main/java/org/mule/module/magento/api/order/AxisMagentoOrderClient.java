@@ -213,5 +213,13 @@ public class AxisMagentoOrderClient extends AbstractMagentoClient
 		javax.xml.rpc.holders.StringHolder sh = new javax.xml.rpc.holders.StringHolder(incrementId);
 		getPort().salesOrderReorder(getSessionId(), sh, customerData);
 	}
+	
+	@Override
+	public void updateOrder(@NotNull String incrementId, SalesOrderEntityToUpdate orderData)
+			throws RemoteException {
+		Validate.notNull(incrementId);
+		javax.xml.rpc.holders.StringHolder sh = new javax.xml.rpc.holders.StringHolder(incrementId);
+		getPort().salesOrderUpdate(getSessionId(), sh, orderData);
+	}
 
 }

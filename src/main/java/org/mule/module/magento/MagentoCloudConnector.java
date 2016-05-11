@@ -207,7 +207,8 @@ public class MagentoCloudConnector {
         keys.add(this.createKey(SalesOrderCreditmemoCommentEntity.class));
         keys.add(this.createKey(SalesOrderCreditmemoEntity.class));
         keys.add(this.createKey(SalesOrderCreditmemoItemEntity.class));
-        keys.add(this.createKey(SalesOrderEntity.class));
+        keys.add(this.createKey(SalesOrderEntity.class));        
+        keys.add(this.createKey(SalesOrderEntityToUpdate.class));
         keys.add(this.createKey(SalesOrderEntityToReorder.class));
         keys.add(this.createKey(SalesOrderInvoiceCommentEntity.class));
         keys.add(this.createKey(SalesOrderInvoiceEntity.class));
@@ -1930,6 +1931,17 @@ public class MagentoCloudConnector {
         return shoppingCartClient.removeShoppingCartCoupon(quoteId, storeId);
     }
 
+    /**
+     * Update status of an existing order with increment Id 
+     * {@sample.xml ../../../doc/magento-connector.xml.sample magento:remakeOrder}
+     * 
+     * @param incrementId Increment Id of magento order
+     * @param orderData New data for new order
+     */
+    @Processor
+    public void updateOrder(String incrementId, @Default("#[payload]") SalesOrderEntityToUpdate orderData) {
+    	orderClient.updateOrder(incrementId, orderData);
+    }
     /**
      * Removes an existing order with increment Id and creates new one with new increment Id and new data. 
      * {@sample.xml ../../../doc/magento-connector.xml.sample magento:remakeOrder}

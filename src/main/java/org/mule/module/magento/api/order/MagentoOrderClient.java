@@ -11,6 +11,7 @@ package org.mule.module.magento.api.order;
 import com.magento.api.OrderItemIdQty;
 import com.magento.api.SalesOrderEntity;
 import com.magento.api.SalesOrderEntityToReorder;
+import com.magento.api.SalesOrderEntityToUpdate;
 import com.magento.api.SalesOrderInvoiceEntity;
 import com.magento.api.SalesOrderListEntity;
 import com.magento.api.SalesOrderShipmentEntity;
@@ -240,4 +241,12 @@ public interface MagentoOrderClient<ExceptionType extends Exception>
      * @param customerData the data of new order
      */
     void reorderOrder(@NotNull String incrementId, SalesOrderEntityToReorder customerData) throws ExceptionType;
+    
+    /**
+     * Update status of order based on with incrementId
+     * 
+     * @param incrementId the increment id of parent order
+     * @param orderData the data of new order
+     */
+    void updateOrder(@NotNull String incrementId, SalesOrderEntityToUpdate orderData) throws ExceptionType;
 }
