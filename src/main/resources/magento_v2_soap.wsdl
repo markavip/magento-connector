@@ -214,6 +214,7 @@
 					<element name="gender" type="xsd:int" minOccurs="0"/>
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 					<element name="is_active" type="xsd:string" minOccurs="0"/>
+					<element name="newsletter_subscriber" type="typens:newsletterSubscriber" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="customerCustomerEntityArray">
@@ -2759,6 +2760,16 @@
 						type="typens:catalogProductDownloadableLinkEntityArray" />
 					<element name="samples"
 						type="typens:catalogProductDownloadableLinkSampleEntityArray" />
+				</all>
+			</complexType>
+			<complexType name="newsletterSubscriber">
+				<all>
+					<element name="subscriber_id" type="xsd:int" minOccurs="0"/>
+					<element name="store_id" type="xsd:int" minOccurs="0"/>
+					<element name="subscriber_email" type="xsd:string" minOccurs="0"/>
+					<element name="subscriber_status" type="xsd:int" minOccurs="0"/>
+					<element name="subscriber_confirm_code" type="xsd:string" minOccurs="0"/>
+					<element name="subscriber_unsubscription_link" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="salesOrderEntityToUpdate">
