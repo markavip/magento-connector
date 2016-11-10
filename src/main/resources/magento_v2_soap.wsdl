@@ -1490,6 +1490,8 @@
 					<element name="cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
 					<element name="base_cod_fee_invoiced" type="xsd:string" minOccurs="0"/>
 					<element name="auto_conf_flag" type="xsd:boolean" minOccurs="0"/>
+					<element name="marketing_voucher_value" type="xsd:string" minOccurs="0"/>
+					<element name="employee_discount" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="salesOrderListEntityArray">
@@ -1611,6 +1613,8 @@
 					<element name="product_price" type="xsd:string" minOccurs="0"/>
 					<element name="product_special_price" type="xsd:string" minOccurs="0"/>
 					<element name="division" type="xsd:string" minOccurs="0"/>
+					<element name="marketing_voucher_value" type="xsd:string" minOccurs="0"/>
+					<element name="employee_discount" type="xsd:string" minOccurs="0"/>
 				</all>
 			</complexType>
 			<complexType name="salesOrderItemEntityArray">
