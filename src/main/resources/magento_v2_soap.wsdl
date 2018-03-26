@@ -186,7 +186,6 @@
 					<element name="lang" type="xsd:string" minOccurs="0"/>
 					<element name="updated_by" type="xsd:string" minOccurs="0"/>
 					<element name="is_active" type="xsd:string" minOccurs="0"/>
-					<element name="countryCode" type="xsd:string" minOccurs="0" />
 				</all>
 			</complexType>
 			<complexType name="customerCustomerEntity">
@@ -219,6 +218,7 @@
 					<element name="sales_product_gender" type="xsd:string" minOccurs="0"/>
 					<element name="sales_product_division" type="xsd:string" minOccurs="0"/>
 					<element name="sales_product_subcategory" type="xsd:string" minOccurs="0"/>
+					<element name="countryCode" type="xsd:string" minOccurs="0" />
 				</all>
 			</complexType>
 			<complexType name="customerCustomerEntityArray">
